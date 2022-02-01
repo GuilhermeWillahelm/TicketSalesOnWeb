@@ -1,11 +1,13 @@
-<div class="container mb-3">
-    <a href="">
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                    content.</p>
+<div class="container" *ngFor="let item of moviesList$|async">
+    <div class="row row-cols-auto">
+        <a class="col" href="">
+            <div class="card " style="width: 18rem;">
+                <input type="hidden" value="{{item.id}}" />
+                <img src="{{item.imageMovie}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">{{item.titleMovie}}</p>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
+    </div>
 </div>
